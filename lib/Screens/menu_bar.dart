@@ -1,6 +1,7 @@
 import 'package:athlete_platform/utilities/constant.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:intro_slider/intro_slider.dart';
+import 'package:intro_slider/slide_object.dart';
 
 class MenuBar extends StatefulWidget {
   @override
@@ -8,78 +9,64 @@ class MenuBar extends StatefulWidget {
 }
 
 class _MenuBarState extends State<MenuBar> {
-  List<Widget> scrollItem = [
-    Column(
-      children: <Widget>[
-        Text(
-          'Athlete',
-          style: kHeadingTextStyle,
-        ),
-        SizedBox(height: 40.0),
-        Text(
+  List<Slide> slides = [
+    Slide(
+      centerWidget: Text(
+        'Athlete',
+        style: kHeadingTextStyle,
+      ),
+      styleTitle: kHeadingTextStyle,
+      backgroundColor: Colors.transparent,
+      description:
           'Tap into power of your coaching network to zero in on the athletes that are right for your program.',
-          textAlign: TextAlign.center,
-          style: kDescriptionTextStyle,
-        ),
-      ],
+      styleDescription: kDescriptionTextStyle,
     ),
-    Column(
-      children: <Widget>[
-        Text(
-          'Coach / Recruiter',
-          style: kHeadingTextStyle,
-        ),
-        SizedBox(height: 40.0),
-        Text(
+    Slide(
+      centerWidget: Text(
+        'Coach/Recruiter',
+        style: kHeadingTextStyle,
+      ),
+      styleTitle: kHeadingTextStyle,
+      backgroundColor: Colors.transparent,
+      description:
           'Tap into power of your coaching network to zero in on the athletes that are right for your program.',
-          textAlign: TextAlign.center,
-          style: kDescriptionTextStyle,
-        ),
-      ],
+      styleDescription: kDescriptionTextStyle,
     ),
-    Column(
-      children: <Widget>[
-        Text(
-          'Refree',
-          style: kHeadingTextStyle,
-        ),
-        SizedBox(height: 40.0),
-        Text(
+    Slide(
+      centerWidget: Text(
+        'Refree',
+        style: kHeadingTextStyle,
+      ),
+      styleTitle: kHeadingTextStyle,
+      backgroundColor: Colors.transparent,
+      description:
           'Tap into power of your coaching network to zero in on the athletes that are right for your program.',
-          textAlign: TextAlign.center,
-          style: kDescriptionTextStyle,
-        ),
-      ],
+      styleDescription: kDescriptionTextStyle,
     ),
-    Column(
-      children: <Widget>[
-        Text(
-          'Association',
-          style: kHeadingTextStyle,
-        ),
-        SizedBox(height: 40.0),
-        Text(
+    Slide(
+      centerWidget: Text(
+        'Association',
+        style: kHeadingTextStyle,
+      ),
+      styleTitle: kHeadingTextStyle,
+      backgroundColor: Colors.transparent,
+      description:
           'Tap into power of your coaching network to zero in on the athletes that are right for your program.',
-          textAlign: TextAlign.center,
-          style: kDescriptionTextStyle,
-        ),
-      ],
+      styleDescription: kDescriptionTextStyle,
     ),
-    Column(
-      children: <Widget>[
-        Text(
-          'Retired',
-          style: kHeadingTextStyle,
-        ),
-        SizedBox(height: 40.0),
-        Text(
+    Slide(
+      centerWidget: Text(
+        'Retired',
+        style: kHeadingTextStyle,
+      ),
+      styleTitle: kHeadingTextStyle,
+      backgroundColor: Colors.transparent,
+      description:
           'Tap into power of your coaching network to zero in on the athletes that are right for your program.',
-          textAlign: TextAlign.center,
-          style: kDescriptionTextStyle,
-        ),
-      ],
+      styleDescription: kDescriptionTextStyle,
     ),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,12 +90,18 @@ class _MenuBarState extends State<MenuBar> {
           ),
         ),
         child: SafeArea(
-          child: Container(
-            child: CarouselSlider(
-              height: double.infinity,
-              items: scrollItem,
-              viewportFraction: 1.0,
-            ),
+          child: Stack(
+            children: <Widget>[
+              Container(
+                child: IntroSlider(
+                  slides: slides,
+                  colorDot: Colors.grey,
+                  isShowSkipBtn: false,
+                  nameDoneBtn: 'Skip',
+                  colorActiveDot: Colors.white,
+                ),
+              ),
+            ],
           ),
         ),
       ),

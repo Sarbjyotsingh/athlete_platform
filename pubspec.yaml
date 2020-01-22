@@ -12,7 +12,8 @@ dependencies:
 
   cupertino_icons: ^0.1.2
 
-  carousel_slider: ^1.4.1
+  intro_slider: ^2.2.8
+
 
 dev_dependencies:
   flutter_test:

@@ -12,7 +12,6 @@ const kDescriptionTextStyle = TextStyle(
   fontFamily: 'Muli',
   fontSize: 16.0,
   letterSpacing: 1.5,
-  wordSpacing: 4.2,
 );
 
 const kTransparentBackgroundColor = Color(0xFF1AFFFFFF);
