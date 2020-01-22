@@ -1,7 +1,7 @@
 import 'package:athlete_platform/utilities/constant.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:intro_slider/intro_slider.dart';
-import 'package:intro_slider/slide_object.dart';
 
 class MenuBar extends StatefulWidget {
   @override
@@ -9,75 +9,12 @@ class MenuBar extends StatefulWidget {
 }
 
 class _MenuBarState extends State<MenuBar> {
-  List<Slide> slides = [
-    Slide(
-      centerWidget: Text(
-        'Athlete',
-        style: kHeadingTextStyle,
-      ),
-      styleTitle: kHeadingTextStyle,
-      backgroundColor: Colors.transparent,
-      description:
-          'Tap into power of your coaching network to zero in on the athletes that are right for your program.',
-      styleDescription: kDescriptionTextStyle,
-    ),
-    Slide(
-      centerWidget: Text(
-        'Coach/Recruiter',
-        style: kHeadingTextStyle,
-      ),
-      styleTitle: kHeadingTextStyle,
-      backgroundColor: Colors.transparent,
-      description:
-          'Tap into power of your coaching network to zero in on the athletes that are right for your program.',
-      styleDescription: kDescriptionTextStyle,
-    ),
-    Slide(
-      centerWidget: Text(
-        'Refree',
-        style: kHeadingTextStyle,
-      ),
-      styleTitle: kHeadingTextStyle,
-      backgroundColor: Colors.transparent,
-      description:
-          'Tap into power of your coaching network to zero in on the athletes that are right for your program.',
-      styleDescription: kDescriptionTextStyle,
-    ),
-    Slide(
-      centerWidget: Text(
-        'Association',
-        style: kHeadingTextStyle,
-      ),
-      styleTitle: kHeadingTextStyle,
-      backgroundColor: Colors.transparent,
-      description:
-          'Tap into power of your coaching network to zero in on the athletes that are right for your program.',
-      styleDescription: kDescriptionTextStyle,
-    ),
-    Slide(
-      centerWidget: Text(
-        'Retired',
-        style: kHeadingTextStyle,
-      ),
-      styleTitle: kHeadingTextStyle,
-      backgroundColor: Colors.transparent,
-      description:
-          'Tap into power of your coaching network to zero in on the athletes that are right for your program.',
-      styleDescription: kDescriptionTextStyle,
-    ),
-  ];
+  int _currentMenuPage = 0;
 
+  void screenChange(int index) {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-//      bottomNavigationBar: BottomAppBar(
-//        color: Colors.transparent,
-//        child: FlatButton(
-//          child: Text('Skip'),
-//          color: Colors.transparent,
-//          onPressed: () {},
-//        ),
-//      ),
       body: Container(
         padding: EdgeInsets.all(10),
         constraints: BoxConstraints.expand(),
@@ -90,15 +27,122 @@ class _MenuBarState extends State<MenuBar> {
           ),
         ),
         child: SafeArea(
-          child: Stack(
+          child: Column(
             children: <Widget>[
-              Container(
-                child: IntroSlider(
-                  slides: slides,
-                  colorDot: Colors.grey,
-                  isShowSkipBtn: false,
-                  nameDoneBtn: 'Skip',
-                  colorActiveDot: Colors.white,
+              Expanded(
+                flex: 7,
+                child: CarouselSlider(
+                  enableInfiniteScroll: false,
+                  viewportFraction: 1.0,
+                  items: kMenuItem,
+                  onPageChanged: (index) {
+                    setState(() {
+                      _currentMenuPage = index;
+                    });
+                  },
+                ),
+              ),
+              Expanded(
+                flex: 2,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          width: 35.0,
+                          height: 4.0,
+                          margin: EdgeInsets.symmetric(
+                              vertical: 10.0, horizontal: 3.0),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: _currentMenuPage == 0
+                                ? Colors.white
+                                : Colors.transparent,
+                            borderRadius: BorderRadius.horizontal(
+                              left: Radius.circular(10),
+                              right: Radius.circular(10),
+                            ),
+                            border: Border.all(color: Colors.white, width: 1.0),
+                          ),
+                        ),
+                        Container(
+                          width: 35.0,
+                          height: 4.0,
+                          margin: EdgeInsets.symmetric(
+                              vertical: 10.0, horizontal: 3.0),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: _currentMenuPage == 1
+                                ? Colors.white
+                                : Colors
+                                    .transparent, //change color according to index
+                            borderRadius: BorderRadius.horizontal(
+                              left: Radius.circular(10),
+                              right: Radius.circular(10),
+                            ),
+                            border: Border.all(color: Colors.white, width: 1.0),
+                          ),
+                        ),
+                        Container(
+                          width: 35.0,
+                          height: 4.0,
+                          margin: EdgeInsets.symmetric(
+                              vertical: 10.0, horizontal: 3.0),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: _currentMenuPage == 2
+                                ? Colors.white
+                                : Colors.transparent,
+                            borderRadius: BorderRadius.horizontal(
+                              left: Radius.circular(10),
+                              right: Radius.circular(10),
+                            ),
+                            border: Border.all(color: Colors.white, width: 1.0),
+                          ),
+                        ),
+                        Container(
+                          width: 35.0,
+                          height: 4.0,
+                          margin: EdgeInsets.symmetric(
+                              vertical: 10.0, horizontal: 3.0),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: _currentMenuPage == 3
+                                ? Colors.white
+                                : Colors.transparent,
+                            borderRadius: BorderRadius.horizontal(
+                              left: Radius.circular(10),
+                              right: Radius.circular(10),
+                            ),
+                            border: Border.all(color: Colors.white, width: 1.0),
+                          ),
+                        ),
+                        Container(
+                          width: 35.0,
+                          height: 4.0,
+                          margin: EdgeInsets.symmetric(
+                              vertical: 10.0, horizontal: 3.0),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: _currentMenuPage == 4
+                                ? Colors.white
+                                : Colors.transparent,
+                            borderRadius: BorderRadius.horizontal(
+                              left: Radius.circular(10),
+                              right: Radius.circular(10),
+                            ),
+                            border: Border.all(color: Colors.white, width: 1.0),
+                          ),
+                        ),
+                      ],
+                    ),
+                    FlatButton(
+                      child: Text('Skip'),
+                      onPressed: () {},
+                    ),
+                  ],
                 ),
               ),
             ],
