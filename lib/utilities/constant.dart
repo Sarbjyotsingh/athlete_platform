@@ -11,7 +11,8 @@ const kHeadingTextStyle = TextStyle(
 const kDescriptionTextStyle = TextStyle(
   fontFamily: 'Muli',
   fontSize: 16.0,
-  letterSpacing: 1,
+  wordSpacing: 2,
+  letterSpacing: 2,
 );
 
 const kTransparentBackgroundColor = Color(0xFF1AFFFFFF);
