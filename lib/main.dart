@@ -12,8 +12,11 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MenuBar(),
       theme: ThemeData.dark(),
+      initialRoute: MenuBar.id,
+      routes: {
+        MenuBar.id: (context) => MenuBar(),
+      },
     );
   }
 }

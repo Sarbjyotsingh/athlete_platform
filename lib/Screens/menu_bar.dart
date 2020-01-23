@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MenuBar extends StatefulWidget {
+  static String id = '/';
   @override
   _MenuBarState createState() => _MenuBarState();
 }

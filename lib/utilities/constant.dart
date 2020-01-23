@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 const kHeadingTextStyle = TextStyle(
-  fontSize: 30.0,
+  fontSize: 32.0,
   fontFamily: 'Muli',
   fontWeight: FontWeight.bold,
   letterSpacing: 1,
@@ -11,7 +11,7 @@ const kHeadingTextStyle = TextStyle(
 const kDescriptionTextStyle = TextStyle(
   fontFamily: 'Muli',
   fontSize: 16.0,
-  letterSpacing: 2.5,
+  letterSpacing: 1,
 );
 
 const kTransparentBackgroundColor = Color(0xFF1AFFFFFF);
