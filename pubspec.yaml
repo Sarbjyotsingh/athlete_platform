@@ -28,6 +28,8 @@ flutter:
   fonts:
    - family: Muli
      fonts:
+       - asset: fonts/Muli-Black.ttf
+         weight: 900
        - asset: fonts/Muli-Bold.ttf
          weight: 700
        - asset: fonts/Muli-Regular.ttf

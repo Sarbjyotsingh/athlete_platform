@@ -1,3 +1,4 @@
+import 'package:athlete_platform/screens/group_listing.dart';
 import 'package:athlete_platform/utilities/constant.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
@@ -140,8 +141,14 @@ class _MenuBarState extends State<MenuBar> {
                       ],
                     ),
                     FlatButton(
-                      child: Text('Skip'),
-                      onPressed: () {},
+                      child: Text(
+                        'Skip',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(
+                            context, GroupListing.id);
+                      },
                     ),
                   ],
                 ),
