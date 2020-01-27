@@ -1,3 +1,4 @@
+import 'package:athlete_platform/screens/discussion_list.dart';
 import 'package:athlete_platform/screens/edit_group.dart';
 import 'package:athlete_platform/screens/invite_member.dart';
 import 'package:athlete_platform/screens/member_listing.dart';
@@ -26,7 +27,9 @@ class _GroupDetailsState extends State<GroupDetails> {
           ),
         ),
         backgroundColor: Color(0xFFf01b01),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, DiscussionList.id);
+        },
         elevation: 0,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

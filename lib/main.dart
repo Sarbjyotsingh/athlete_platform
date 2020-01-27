@@ -1,4 +1,5 @@
 import 'package:athlete_platform/screens/create_group.dart';
+import 'package:athlete_platform/screens/discussion_list.dart';
 import 'package:athlete_platform/screens/edit_group.dart';
 import 'package:athlete_platform/screens/group_details.dart';
 import 'package:athlete_platform/screens/group_listing.dart';
@@ -27,6 +28,7 @@ class _MyAppState extends State<MyApp> {
         EditGroup.id: (context) => EditGroup(),
         MemberListing.id: (context) => MemberListing(),
         InviteMember.id: (context) => InviteMember(),
+        DiscussionList.id: (context) => DiscussionList(),
       },
     );
   }

@@ -18,11 +18,16 @@ class _InviteMemberState extends State<InviteMember> {
         elevation: 0,
         title: Row(
           children: <Widget>[
-            Icon(
-              Icons.keyboard_backspace,
-              color: Colors.black,
-              size: 30,
-            ),
+        GestureDetector(
+        child: Icon(
+          Icons.keyboard_backspace,
+          color: Colors.black,
+          size: 30,
+        ),
+        onTap: () {
+          Navigator.pop(context);
+        },
+      ),
             SizedBox(
               width: 10,
             ),
