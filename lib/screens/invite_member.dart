@@ -18,16 +18,16 @@ class _InviteMemberState extends State<InviteMember> {
         elevation: 0,
         title: Row(
           children: <Widget>[
-        GestureDetector(
-        child: Icon(
-          Icons.keyboard_backspace,
-          color: Colors.black,
-          size: 30,
-        ),
-        onTap: () {
-          Navigator.pop(context);
-        },
-      ),
+            GestureDetector(
+              child: Icon(
+                Icons.keyboard_backspace,
+                color: Colors.black,
+                size: 30,
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
             SizedBox(
               width: 10,
             ),
@@ -46,9 +46,7 @@ class _InviteMemberState extends State<InviteMember> {
             text: 'Send',
             underLineColor: Color(0xFFf01b01),
             textColor: Color(0xFFf01b01),
-            onPressed: () {
-              Navigator.pushNamed(context, InviteMember.id);
-            },
+            onPressed: () {},
           ),
         ],
       ),
