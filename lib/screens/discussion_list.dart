@@ -24,7 +24,9 @@ class _DiscussionListState extends State<DiscussionList> {
           ),
         ),
         backgroundColor: Color(0xFFf01b01),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, DiscussionDetail.id);
+        },
         elevation: 0,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

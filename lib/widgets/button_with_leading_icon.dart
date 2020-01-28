@@ -15,7 +15,6 @@ class ButtonWithLeadingIcon extends StatelessWidget {
         children: <Widget>[
           Icon(
             leadingIcon,
-            color: Colors.grey,
             size: 18,
           ),
           SizedBox(
@@ -24,8 +23,7 @@ class ButtonWithLeadingIcon extends StatelessWidget {
           Text(
             text,
             style: TextStyle(
-              fontSize: 15,
-              color: Colors.grey,
+              fontSize: 13,
               fontFamily: 'Muli',
             ),
           ),

@@ -61,7 +61,7 @@ class DiscussionCard extends StatelessWidget {
 
     return Container(
       margin: EdgeInsets.only(top: 10),
-      padding: EdgeInsets.only(right: 5, top: 10, bottom: 10, left: 5),
+      padding: EdgeInsets.only(right: 5, top: 0, bottom: 10, left: 5),
       decoration: BoxDecoration(
         color: Color(0xFFF5F5F5),
         shape: BoxShape.rectangle,
@@ -96,6 +96,7 @@ class DiscussionCard extends StatelessWidget {
             subtitle: Text(
               userDescription,
               style: TextStyle(
+                fontFamily: 'Muli',
                 fontSize: 12,
               ),
             ),
@@ -103,9 +104,6 @@ class DiscussionCard extends StatelessWidget {
               onTap: _bottomSheet,
               child: Icon(Icons.more_vert),
             ),
-          ),
-          SizedBox(
-            height: 15,
           ),
           GestureDetector(
             onTap: onPressed,
@@ -123,7 +121,7 @@ class DiscussionCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 3,
+                  height: 7,
                 ),
                 Align(
                   alignment: Alignment.topLeft,
