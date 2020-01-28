@@ -24,7 +24,7 @@ class _EditGroupState extends State<EditGroup> {
                 child: Padding(
                   padding: EdgeInsets.only(top: 10, left: 10),
                   child: Text(
-                    'Create Group',
+                    'Edit Group',
                     style: kCreateAndEditPageHeadingStyle,
                   ),
                 ),

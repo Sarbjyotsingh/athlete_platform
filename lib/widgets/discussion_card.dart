@@ -8,7 +8,9 @@ class DiscussionCard extends StatelessWidget {
   final String userDescription;
   final String discussionTitle;
   final String discussionDescription;
+  final VoidCallback onPressed;
   DiscussionCard({
+    @required this.onPressed,
     @required this.discussionDescription,
     @required this.discussionTitle,
     @required this.userDescription,
@@ -17,6 +19,46 @@ class DiscussionCard extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    void _bottomSheet() {
+      showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            padding: EdgeInsets.all(10),
+            height: 140,
+            child: Column(
+              children: <Widget>[
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: ListTile(
+                      leading: Icon(Icons.edit),
+                      title: Text('Edit'),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: ListTile(
+                      leading: Icon(Icons.delete),
+                      title: Text('Delete'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      );
+    }
+
     return Container(
       margin: EdgeInsets.only(top: 10),
       padding: EdgeInsets.only(right: 5, top: 10, bottom: 10, left: 5),
@@ -58,35 +100,42 @@ class DiscussionCard extends StatelessWidget {
               ),
             ),
             trailing: GestureDetector(
-              onTap: () {},
+              onTap: _bottomSheet,
               child: Icon(Icons.more_vert),
             ),
           ),
           SizedBox(
             height: 15,
           ),
-          Align(
-            alignment: Alignment.topLeft,
-            child: Text(
-              discussionTitle,
-              style: TextStyle(
-                fontFamily: 'Muli',
-                fontWeight: FontWeight.w700,
-                fontSize: 13,
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 3,
-          ),
-          Align(
-            alignment: Alignment.topLeft,
-            child: Text(
-              discussionDescription,
-              style: TextStyle(
-                fontFamily: 'Muli',
-                fontSize: 12,
-              ),
+          GestureDetector(
+            onTap: onPressed,
+            child: Column(
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    discussionTitle,
+                    style: TextStyle(
+                      fontFamily: 'Muli',
+                      fontWeight: FontWeight.w700,
+                      fontSize: 13,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 3,
+                ),
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    discussionDescription,
+                    style: TextStyle(
+                      fontFamily: 'Muli',
+                      fontSize: 12,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           SizedBox(
@@ -104,7 +153,7 @@ class DiscussionCard extends StatelessWidget {
               ),
               ButtonWithLeadingIcon(
                 text: 'Comment',
-                leadingIcon: Icons.mode_comment,
+                leadingIcon: FontAwesomeIcons.comment,
               ),
             ],
           ),

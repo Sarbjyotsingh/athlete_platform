@@ -16,6 +16,47 @@ class GroupDetails extends StatefulWidget {
 class _GroupDetailsState extends State<GroupDetails> {
   @override
   Widget build(BuildContext context) {
+    void _bottomSheet() {
+      showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            padding: EdgeInsets.all(10),
+            height: 140,
+            child: Column(
+              children: <Widget>[
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.pushNamed(context, EditGroup.id);
+                  },
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: ListTile(
+                      leading: Icon(Icons.edit),
+                      title: Text('Edit'),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: ListTile(
+                      leading: Icon(Icons.delete),
+                      title: Text('Delete'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      );
+    }
+
     return Scaffold(
       floatingActionButton: FloatingActionButton.extended(
         label: Text(
@@ -61,10 +102,11 @@ class _GroupDetailsState extends State<GroupDetails> {
                             Navigator.pop(context);
                           },
                         ),
-                        DropdownButtonHideUnderline(
-                          child: DropdownButton(
+                        Align(
+                          alignment: Alignment.topRight,
+                          child: IconButton(
                             icon: Container(
-                              padding: EdgeInsets.all(3),
+                              padding: EdgeInsets.all(2),
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: Color(0xFF333333).withOpacity(0.5),
@@ -74,22 +116,7 @@ class _GroupDetailsState extends State<GroupDetails> {
                                 color: Color(0xFFe1e1e1),
                               ),
                             ),
-                            elevation: 0,
-                            onChanged: (value) {
-                              if (value == 'Edit') {
-                                Navigator.pushNamed(context, EditGroup.id);
-                              }
-                            },
-                            items: <DropdownMenuItem>[
-                              DropdownMenuItem(
-                                child: Text('Edit'),
-                                value: 'Edit',
-                              ),
-                              DropdownMenuItem(
-                                child: Text('Delete'),
-                                value: 'Delete',
-                              ),
-                            ],
+                            onPressed: _bottomSheet,
                           ),
                         ),
                       ],

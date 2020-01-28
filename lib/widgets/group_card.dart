@@ -11,6 +11,47 @@ class GroupCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void _bottomSheet() {
+      showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            padding: EdgeInsets.all(10),
+            height: 140,
+            child: Column(
+              children: <Widget>[
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.pushNamed(context, EditGroup.id);
+                  },
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: ListTile(
+                      leading: Icon(Icons.edit),
+                      title: Text('Edit'),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: ListTile(
+                      leading: Icon(Icons.delete),
+                      title: Text('Delete'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      );
+    }
+
     return Container(
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.only(bottom: 10),
@@ -38,37 +79,19 @@ class GroupCard extends StatelessWidget {
               ),
               child: Align(
                 alignment: Alignment.topRight,
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton(
-                    icon: Container(
-                      margin: EdgeInsets.only(right: 5),
-                      padding: EdgeInsets.all(3),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color(0xFF333333).withOpacity(0.5),
-                      ),
-                      child: Icon(
-                        Icons.more_vert,
-                        color: Color(0xFFe1e1e1),
-                      ),
+                child: IconButton(
+                  icon: Container(
+                    padding: EdgeInsets.all(2),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Color(0xFF333333).withOpacity(0.5),
                     ),
-                    elevation: 0,
-                    onChanged: (value) {
-                      if (value == 'Edit') {
-                        Navigator.pushNamed(context, EditGroup.id);
-                      }
-                    },
-                    items: <DropdownMenuItem>[
-                      DropdownMenuItem(
-                        child: Text('Edit'),
-                        value: 'Edit',
-                      ),
-                      DropdownMenuItem(
-                        child: Text('Delete'),
-                        value: 'Delete',
-                      ),
-                    ],
+                    child: Icon(
+                      Icons.more_vert,
+                      color: Color(0xFFe1e1e1),
+                    ),
                   ),
+                  onPressed: _bottomSheet,
                 ),
               ),
             ),

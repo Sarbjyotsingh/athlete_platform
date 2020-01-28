@@ -1,3 +1,4 @@
+import 'package:athlete_platform/screens/discussion_detail.dart';
 import 'package:athlete_platform/widgets/discussion_card.dart';
 import 'package:athlete_platform/widgets/memeber_detail_card.dart';
 import 'package:flutter/cupertino.dart';
@@ -81,50 +82,65 @@ class _DiscussionListState extends State<DiscussionList> {
                     'images/person1.jpg',
                   ),
                   userName: 'Me',
-                  userDescription: 'Coach, Consultant (Univerity of Calgory)',
+                  userDescription: 'Coach, Consultant (Univerity of ...',
                   discussionTitle: 'Discussion title will go here ...',
                   discussionDescription:
                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ',
+                  onPressed: () {
+                    Navigator.pushNamed(context, DiscussionDetail.id);
+                  },
                 ),
                 DiscussionCard(
                   userImage: AssetImage(
                     'images/person1.jpg',
                   ),
                   userName: 'Me',
-                  userDescription: 'Coach, Consultant (Univerity of Calgory)',
+                  userDescription: 'Coach, Consultant (Univerity of ...',
                   discussionTitle: 'Discussion title will go here ...',
                   discussionDescription:
                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ',
+                  onPressed: () {
+                    Navigator.pushNamed(context, DiscussionDetail.id);
+                  },
                 ),
                 DiscussionCard(
                   userImage: AssetImage(
                     'images/person1.jpg',
                   ),
                   userName: 'Me',
-                  userDescription: 'Coach, Consultant (Univerity of Calgory)',
+                  userDescription: 'Coach, Consultant (Univerity of ...',
                   discussionTitle: 'Discussion title will go here ...',
                   discussionDescription:
                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ',
+                  onPressed: () {
+                    Navigator.pushNamed(context, DiscussionDetail.id);
+                  },
                 ),
                 DiscussionCard(
                   userImage: AssetImage(
                     'images/person1.jpg',
                   ),
                   userName: 'Me',
-                  userDescription: 'Coach, Consultant (Univerity of Calgory)',
+                  userDescription: 'Coach, Consultant (Univerity of ...',
                   discussionTitle: 'Discussion title will go here ...',
                   discussionDescription:
                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ',
+                  onPressed: () {
+                    Navigator.pushNamed(context, DiscussionDetail.id);
+                  },
                 ),
                 DiscussionCard(
                   userImage: AssetImage(
                     'images/person1.jpg',
                   ),
                   userName: 'Me',
-                  userDescription: 'Coach, Consultant (Univerity of Calgory)',
+                  userDescription: 'Coach, Consultant (Univerity of ...',
                   discussionTitle: 'Discussion title will go here ...',
                   discussionDescription:
                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ',
+                  onPressed: () {
+                    Navigator.pushNamed(context, DiscussionDetail.id);
+                  },
                 ),
                 SizedBox(
                   height: 120,
