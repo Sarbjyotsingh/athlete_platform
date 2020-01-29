@@ -145,6 +145,7 @@ class DiscussionCard extends StatelessWidget {
               ButtonWithLeadingIcon(
                 text: 'Like',
                 leadingIcon: FontAwesomeIcons.heart,
+                onTapIconColor: Colors.red,
               ),
               SizedBox(
                 width: 20,

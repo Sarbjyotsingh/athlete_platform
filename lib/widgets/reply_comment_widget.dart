@@ -142,6 +142,8 @@ class ReplyCommentWidget extends StatelessWidget {
               ButtonWithLeadingIcon(
                 text: 'Like',
                 leadingIcon: FontAwesomeIcons.heart,
+                onTapIconColor: Colors.red,
+                onTapIconChange: FontAwesomeIcons.solidHeart,
               ),
               SizedBox(
                 width: 20,
