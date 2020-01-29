@@ -7,6 +7,7 @@ import 'package:athlete_platform/screens/group_listing.dart';
 import 'package:athlete_platform/screens/invite_member.dart';
 import 'package:athlete_platform/screens/member_listing.dart';
 import 'package:athlete_platform/screens/menu_bar.dart';
+import 'package:athlete_platform/screens/start_discussion.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -31,6 +32,7 @@ class _MyAppState extends State<MyApp> {
         InviteMember.id: (context) => InviteMember(),
         DiscussionList.id: (context) => DiscussionList(),
         DiscussionDetail.id: (context) => DiscussionDetail(),
+        StartDiscussion.id: (context) => StartDiscussion(),
       },
     );
   }

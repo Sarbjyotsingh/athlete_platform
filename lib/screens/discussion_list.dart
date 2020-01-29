@@ -1,4 +1,5 @@
 import 'package:athlete_platform/screens/discussion_detail.dart';
+import 'package:athlete_platform/screens/start_discussion.dart';
 import 'package:athlete_platform/widgets/discussion_card.dart';
 import 'package:athlete_platform/widgets/memeber_detail_card.dart';
 import 'package:flutter/cupertino.dart';
@@ -25,7 +26,7 @@ class _DiscussionListState extends State<DiscussionList> {
         ),
         backgroundColor: Color(0xFFf01b01),
         onPressed: () {
-          Navigator.pushNamed(context, DiscussionDetail.id);
+          Navigator.pushNamed(context, StartDiscussion.id);
         },
         elevation: 0,
       ),
