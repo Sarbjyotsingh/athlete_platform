@@ -27,8 +27,7 @@ class _StartDiscussionState extends State<StartDiscussion> {
               Container(
                 height: 120,
                 margin: EdgeInsets.only(top: 20),
-                padding:
-                    EdgeInsets.only(left: 10, top: 2, bottom: 10, right: 20),
+                padding: EdgeInsets.only(top: 2, bottom: 10, right: 20),
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                 ),
