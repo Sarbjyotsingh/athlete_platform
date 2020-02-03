@@ -1,5 +1,6 @@
 import 'package:athlete_platform/utilities/constant.dart';
 import 'package:athlete_platform/widgets/circular_button_with_text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class StartDiscussion extends StatefulWidget {
@@ -36,53 +37,6 @@ class _StartDiscussionState extends State<StartDiscussion> {
                     hintText: 'Share your thoughts',
                     hintStyle: kTextFieldHintTextDecoration,
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 10, bottom: 10),
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: Colors.grey,
-                        ),
-                      ),
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Icon(
-                          Icons.videocam,
-                          color: Colors.grey,
-                        ),
-                      ),
-                      height: 40,
-                      width: 40,
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: Colors.grey,
-                        ),
-                      ),
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Icon(
-                          Icons.photo,
-                          color: Colors.grey,
-                        ),
-                      ),
-                      height: 40,
-                      width: 40,
-                    ),
-                  ],
                 ),
               ),
               SizedBox(

@@ -5,6 +5,7 @@ class CircularTextFormField extends StatelessWidget {
   final TextStyle hintTextStyle;
   final Color borderColor;
   final Color textFieldColor;
+
   CircularTextFormField({
     @required this.hintText,
     @required this.textFieldColor,
@@ -15,9 +16,8 @@ class CircularTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 45,
       margin: EdgeInsets.only(top: 5),
-      padding: EdgeInsets.only(left: 20, top: 0, bottom: 0, right: 20),
+      padding: EdgeInsets.only(left: 20, top: 15, bottom: 15, right: 20),
       decoration: BoxDecoration(
         color: textFieldColor,
         shape: BoxShape.rectangle,

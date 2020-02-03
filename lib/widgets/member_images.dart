@@ -11,7 +11,7 @@ class MemberImages extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(top: 8, bottom: 8),
       height: 48.0,
-      width: 160.0,
+      width: 145.0,
       child: Stack(
         overflow: Overflow.visible,
         children: <Widget>[

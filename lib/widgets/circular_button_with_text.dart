@@ -7,6 +7,7 @@ class CircularButtonWithText extends StatelessWidget {
   final Color textColor;
   final VoidCallback onPressed;
   final TextStyle textStyle;
+  final EdgeInsetsGeometry padding;
   CircularButtonWithText({
     @required this.text,
     @required this.onPressed,
@@ -14,12 +15,14 @@ class CircularButtonWithText extends StatelessWidget {
     @required this.buttonColor,
     @required this.textColor,
     @required this.textStyle,
+    this.padding,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(10),
+      padding: padding ?? EdgeInsets.all(0),
       decoration: BoxDecoration(
         color: buttonColor,
         shape: BoxShape.rectangle,

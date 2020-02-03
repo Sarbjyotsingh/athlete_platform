@@ -66,37 +66,41 @@ class ReplyCommentWidget extends StatelessWidget {
               SizedBox(
                 width: 0,
               ),
-              Row(
-                children: <Widget>[
-                  CircleAvatar(
-                    backgroundImage: userImage,
-                  ),
-                  SizedBox(
-                    width: 18,
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        userName,
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontFamily: 'Muli',
-                          fontWeight: FontWeight.w700,
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    CircleAvatar(
+                      backgroundImage: userImage,
+                    ),
+                    SizedBox(
+                      width: 18,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          userName,
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontFamily: 'Muli',
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                      ),
-                      Text(
-                        userDescription,
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontFamily: 'Muli',
-                          fontSize: 12,
+                        Text(
+                          userDescription,
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontFamily: 'Muli',
+                            fontSize: 12,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
               GestureDetector(
                 onTap: _bottomSheet,

@@ -1,57 +1,21 @@
-import 'package:athlete_platform/screens/edit_group.dart';
-import 'package:athlete_platform/screens/group_details.dart';
-import 'package:athlete_platform/screens/member_listing.dart';
 import 'package:athlete_platform/widgets/member_images.dart';
 import 'package:flutter/material.dart';
 
 class GroupCard extends StatelessWidget {
-  const GroupCard({
-    Key key,
-  }) : super(key: key);
-
+  final ImageProvider postImage;
+  final String postHeading;
+  final dynamic bottomSheet;
+  final VoidCallback onPressedGroup;
+  final VoidCallback onPressedMember;
+  GroupCard({
+    @required this.postImage,
+    @required this.postHeading,
+    @required this.bottomSheet,
+    @required this.onPressedGroup,
+    @required this.onPressedMember,
+  });
   @override
   Widget build(BuildContext context) {
-    void _bottomSheet() {
-      showModalBottomSheet(
-        context: context,
-        builder: (context) {
-          return Container(
-            padding: EdgeInsets.all(10),
-            height: 140,
-            child: Column(
-              children: <Widget>[
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                    Navigator.pushNamed(context, EditGroup.id);
-                  },
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: ListTile(
-                      leading: Icon(Icons.edit),
-                      title: Text('Edit'),
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: ListTile(
-                      leading: Icon(Icons.delete),
-                      title: Text('Delete'),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
-      );
-    }
-
     return Container(
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.only(bottom: 10),
@@ -63,16 +27,14 @@ class GroupCard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, GroupDetails.id);
-            },
+            onTap: onPressedGroup,
             child: Container(
               height: 150,
               width: double.infinity,
               constraints: BoxConstraints.tightFor(),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('images/center_card.jpg'),
+                  image: postImage,
                   fit: BoxFit.cover,
                 ),
                 borderRadius: BorderRadius.circular(5),
@@ -91,7 +53,7 @@ class GroupCard extends StatelessWidget {
                       color: Color(0xFFe1e1e1),
                     ),
                   ),
-                  onPressed: _bottomSheet,
+                  onPressed: bottomSheet,
                 ),
               ),
             ),
@@ -99,17 +61,19 @@ class GroupCard extends StatelessWidget {
           SizedBox(
             height: 15,
           ),
-          GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, GroupDetails.id);
-            },
-            child: Text(
-              '2019 Holiday 4\'s Beach Volleyball Tournament.',
-              style: TextStyle(
-                fontSize: 17,
-                fontFamily: 'Muli',
-                fontWeight: FontWeight.w700,
-                color: Color(0xFF555555),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: GestureDetector(
+              onTap: onPressedGroup,
+              child: Text(
+                postHeading,
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 17,
+                  fontFamily: 'Muli',
+                  fontWeight: FontWeight.w700,
+                  color: Color(0xFF555555),
+                ),
               ),
             ),
           ),
@@ -120,9 +84,7 @@ class GroupCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, MemberListing.id);
-                    },
+                    onTap: onPressedMember,
                     child: MemberImages(),
                   ),
                   FlatButton(
@@ -136,9 +98,7 @@ class GroupCard extends StatelessWidget {
                       ),
                     ),
                     textColor: Color(0xFF555555),
-                    onPressed: () {
-                      Navigator.pushNamed(context, MemberListing.id);
-                    },
+                    onPressed: onPressedMember,
                   ),
                 ],
               ),

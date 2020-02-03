@@ -1,16 +1,18 @@
-import 'package:athlete_platform/screens/group_listing.dart';
 import 'package:athlete_platform/utilities/constant.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'signin.dart';
+
 class MenuBar extends StatefulWidget {
-  static String id = '/';
+  static String id = 'menu_bar';
   @override
   _MenuBarState createState() => _MenuBarState();
 }
 
 class _MenuBarState extends State<MenuBar> {
+  String _buttonText = 'Skip';
   int _currentMenuPage = 0;
 
   void screenChange(int index) {}
@@ -23,7 +25,9 @@ class _MenuBarState extends State<MenuBar> {
         decoration: BoxDecoration(
           image: DecorationImage(
             colorFilter: new ColorFilter.mode(
-                Colors.black.withOpacity(0.7), BlendMode.srcOver),
+              Colors.black.withOpacity(0.7),
+              BlendMode.srcOver,
+            ),
             image: AssetImage('images/background_menu_bar.jpg'),
             fit: BoxFit.cover,
           ),
@@ -40,6 +44,11 @@ class _MenuBarState extends State<MenuBar> {
                   onPageChanged: (index) {
                     setState(() {
                       _currentMenuPage = index;
+                      if (_currentMenuPage == 4) {
+                        _buttonText = 'Continue';
+                      } else {
+                        _buttonText = 'Skip';
+                      }
                     });
                   },
                 ),
@@ -142,12 +151,11 @@ class _MenuBarState extends State<MenuBar> {
                     ),
                     FlatButton(
                       child: Text(
-                        'Skip',
+                        _buttonText,
                         style: TextStyle(color: Colors.white),
                       ),
                       onPressed: () {
-                        Navigator.pushReplacementNamed(
-                            context, GroupListing.id);
+                        Navigator.pushNamed(context, SignIn.id);
                       },
                     ),
                   ],

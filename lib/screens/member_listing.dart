@@ -37,7 +37,7 @@ class _MemberListingState extends State<MemberListing> {
               style: TextStyle(
                 color: Colors.black,
                 fontFamily: 'Muli',
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ],

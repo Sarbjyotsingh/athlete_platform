@@ -24,7 +24,7 @@ class MemberDetailCard extends StatelessWidget {
           ),
         ),
         child: CircleAvatar(
-          radius: 18,
+          radius: 21,
           backgroundImage: backgroundImage,
         ),
       ),
