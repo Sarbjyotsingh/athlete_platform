@@ -1,3 +1,4 @@
+import 'package:athlete_platform/screens/search_filtter_page.dart';
 import 'package:athlete_platform/widgets/connection_card.dart';
 import 'package:flutter/material.dart';
 
@@ -148,7 +149,9 @@ class _SearchPageState extends State<SearchPage> {
                 size: 30,
                 color: Colors.black,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, SearchFilterPage.id);
+              },
             )
           ],
           backgroundColor: Colors.white,

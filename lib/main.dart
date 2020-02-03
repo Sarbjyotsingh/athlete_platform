@@ -16,6 +16,7 @@ import 'package:athlete_platform/screens/member_listing.dart';
 import 'package:athlete_platform/screens/member_listing_non_user_post.dart';
 import 'package:athlete_platform/screens/menu_bar.dart';
 import 'package:athlete_platform/screens/post.dart';
+import 'package:athlete_platform/screens/search_filtter_page.dart';
 import 'package:athlete_platform/screens/search_page.dart';
 import 'package:athlete_platform/screens/signin.dart';
 import 'package:athlete_platform/screens/signup.dart';
@@ -83,6 +84,7 @@ class _MyAppState extends State<MyApp> {
             DiscussionDetailsNonUserPost(),
         ConnectionListing.id: (context) => ConnectionListing(),
         SearchPage.id: (context) => SearchPage(),
+        SearchFilterPage.id: (context) => SearchFilterPage(),
       },
     );
   }
