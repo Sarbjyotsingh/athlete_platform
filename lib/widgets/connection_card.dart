@@ -3,7 +3,6 @@ import 'package:athlete_platform/widgets/image_with_circular_border.dart';
 import 'package:flutter/material.dart';
 
 class ConnectionCard extends StatefulWidget {
-  final int connectionID;
   final ImageProvider image;
   final VoidCallback onPressedButton;
   final String userName;
@@ -12,6 +11,8 @@ class ConnectionCard extends StatefulWidget {
   final Color buttonColor;
   final Color buttonBorderColor;
   final Color buttonTextColor;
+
+  final String buttonText;
   ConnectionCard({
     @required this.image,
     @required this.onPressedButton,
@@ -21,7 +22,7 @@ class ConnectionCard extends StatefulWidget {
     @required this.buttonBorderColor,
     @required this.buttonColor,
     @required this.buttonTextColor,
-    this.connectionID,
+    @required this.buttonText,
   });
   @override
   _ConnectionCardState createState() => _ConnectionCardState();
@@ -75,7 +76,7 @@ class _ConnectionCardState extends State<ConnectionCard> {
               ],
             ),
             CircularButtonWithText(
-              text: 'United',
+              text: widget.buttonText,
               textStyle: TextStyle(
                 fontSize: 15,
                 fontFamily: 'Muli',

@@ -11,11 +11,35 @@ class _ConnectionListingState extends State<ConnectionListing> {
   List<Color> _buttonColor = List(7);
   List<Color> _buttonBorderColor = List(7);
   List<Color> _buttonTextColor = List(7);
+  List<String> _buttonText = List(7);
+
   void _settingInitialColor() {
     for (int i = 0; i < 7; i++) {
       _buttonColor[i] = Colors.red;
       _buttonBorderColor[i] = Colors.red;
       _buttonTextColor[i] = Colors.white;
+      _buttonText[i] = 'United';
+    }
+  }
+
+  void _changeButton(int index) async {
+    if (_buttonColor[index] == Colors.white) {
+      setState(() {
+        _buttonTextColor[index] = Colors.white;
+        _buttonColor[index] = Colors.red;
+        _buttonBorderColor[index] = Colors.red;
+        _buttonText[index] = 'United';
+      });
+    } else {
+      bool _change = await _bottomSheet();
+      if (_change) {
+        setState(() {
+          _buttonTextColor[index] = Colors.red;
+          _buttonColor[index] = Colors.white;
+          _buttonBorderColor[index] = Colors.red;
+          _buttonText[index] = 'Unite';
+        });
+      }
     }
   }
 
@@ -171,143 +195,94 @@ class _ConnectionListingState extends State<ConnectionListing> {
                 Column(
                   children: <Widget>[
                     ConnectionCard(
-                      connectionID: 1,
                       userName: 'Nikos Markopoulos',
                       userDescription: 'Athlete',
                       userCity: 'Canada',
                       image: AssetImage('images/person3.jpg'),
+                      buttonText: _buttonText[0],
                       buttonColor: _buttonColor[0],
                       buttonBorderColor: _buttonBorderColor[0],
                       buttonTextColor: _buttonTextColor[0],
-                      onPressedButton: () async {
-                        bool _change = await _bottomSheet();
-                        if (_change) {
-                          setState(() {
-                            _buttonTextColor[0] = Colors.red;
-                            _buttonColor[0] = Colors.white;
-                            _buttonBorderColor[0] = Colors.red;
-                          });
-                        }
+                      onPressedButton: () {
+                        _changeButton(0);
                       },
                     ),
                     ConnectionCard(
-                      connectionID: 2,
                       userName: 'Nikos Markopoulos',
                       userDescription: 'Athlete',
                       userCity: 'Canada',
                       image: AssetImage('images/person3.jpg'),
+                      buttonText: _buttonText[1],
                       buttonColor: _buttonColor[1],
                       buttonBorderColor: _buttonBorderColor[1],
                       buttonTextColor: _buttonTextColor[1],
-                      onPressedButton: () async {
-                        bool _change = await _bottomSheet();
-                        if (_change) {
-                          setState(() {
-                            _buttonTextColor[1] = Colors.red;
-                            _buttonColor[1] = Colors.white;
-                            _buttonBorderColor[1] = Colors.red;
-                          });
-                        }
+                      onPressedButton: () {
+                        _changeButton(1);
                       },
                     ),
                     ConnectionCard(
-                      connectionID: 3,
                       userName: 'Nikos Markopoulos',
                       userDescription: 'Athlete',
                       userCity: 'Canada',
                       image: AssetImage('images/person3.jpg'),
+                      buttonText: _buttonText[2],
                       buttonColor: _buttonColor[2],
                       buttonBorderColor: _buttonBorderColor[2],
                       buttonTextColor: _buttonTextColor[2],
-                      onPressedButton: () async {
-                        bool _change = await _bottomSheet();
-                        if (_change) {
-                          setState(() {
-                            _buttonTextColor[2] = Colors.red;
-                            _buttonColor[2] = Colors.white;
-                            _buttonBorderColor[2] = Colors.red;
-                          });
-                        }
+                      onPressedButton: () {
+                        _changeButton(2);
                       },
                     ),
                     ConnectionCard(
-                      connectionID: 4,
                       userName: 'Nikos Markopoulos',
                       userDescription: 'Athlete',
                       userCity: 'Canada',
                       image: AssetImage('images/person3.jpg'),
+                      buttonText: _buttonText[3],
                       buttonColor: _buttonColor[3],
                       buttonBorderColor: _buttonBorderColor[3],
                       buttonTextColor: _buttonTextColor[3],
-                      onPressedButton: () async {
-                        bool _change = await _bottomSheet();
-                        if (_change) {
-                          setState(() {
-                            _buttonTextColor[3] = Colors.red;
-                            _buttonColor[3] = Colors.white;
-                            _buttonBorderColor[3] = Colors.red;
-                          });
-                        }
+                      onPressedButton: () {
+                        _changeButton(3);
                       },
                     ),
                     ConnectionCard(
-                      connectionID: 5,
                       userName: 'Nikos Markopoulos',
                       userDescription: 'Athlete',
                       userCity: 'Canada',
                       image: AssetImage('images/person3.jpg'),
+                      buttonText: _buttonText[4],
                       buttonColor: _buttonColor[4],
                       buttonBorderColor: _buttonBorderColor[4],
                       buttonTextColor: _buttonTextColor[4],
-                      onPressedButton: () async {
-                        bool _change = await _bottomSheet();
-                        if (_change) {
-                          setState(() {
-                            _buttonTextColor[4] = Colors.red;
-                            _buttonColor[4] = Colors.white;
-                            _buttonBorderColor[4] = Colors.red;
-                          });
-                        }
+                      onPressedButton: () {
+                        _changeButton(4);
                       },
                     ),
                     ConnectionCard(
-                      connectionID: 6,
                       userName: 'Nikos Markopoulos',
                       userDescription: 'Athlete',
                       userCity: 'Canada',
                       image: AssetImage('images/person3.jpg'),
+                      buttonText: _buttonText[5],
                       buttonColor: _buttonColor[5],
                       buttonBorderColor: _buttonBorderColor[5],
                       buttonTextColor: _buttonTextColor[5],
-                      onPressedButton: () async {
-                        bool _change = await _bottomSheet();
-                        if (_change) {
-                          setState(() {
-                            _buttonTextColor[5] = Colors.red;
-                            _buttonColor[5] = Colors.white;
-                            _buttonBorderColor[5] = Colors.red;
-                          });
-                        }
+                      onPressedButton: () {
+                        _changeButton(5);
                       },
                     ),
                     ConnectionCard(
-                      connectionID: 7,
                       userName: 'Nikos Markopoulos',
                       userDescription: 'Athlete',
                       userCity: 'Canada',
                       image: AssetImage('images/person3.jpg'),
+                      buttonText: _buttonText[6],
                       buttonColor: _buttonColor[6],
                       buttonBorderColor: _buttonBorderColor[6],
                       buttonTextColor: _buttonTextColor[6],
-                      onPressedButton: () async {
-                        bool _change = await _bottomSheet();
-                        if (_change) {
-                          setState(() {
-                            _buttonTextColor[6] = Colors.red;
-                            _buttonColor[6] = Colors.white;
-                            _buttonBorderColor[6] = Colors.red;
-                          });
-                        }
+                      onPressedButton: () {
+                        _changeButton(6);
                       },
                     ),
                   ],
