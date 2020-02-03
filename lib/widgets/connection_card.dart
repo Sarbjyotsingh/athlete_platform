@@ -33,18 +33,19 @@ class _ConnectionCardState extends State<ConnectionCard> {
   Widget build(BuildContext context) {
     return Card(
       child: Container(
+        width: MediaQuery.of(context).size.width / 2.4,
         padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
             ImageWithCircularBorder(
               image: widget.image,
-              imageRadius: 55,
+              imageRadius: 45,
               borderColor: Colors.grey.shade300,
             ),
             Text(
               widget.userName,
               style: TextStyle(
-                fontSize: 15,
+                fontSize: 12,
                 fontFamily: 'Muli',
                 fontWeight: FontWeight.w700,
               ),
@@ -52,7 +53,7 @@ class _ConnectionCardState extends State<ConnectionCard> {
             Text(
               widget.userDescription,
               style: TextStyle(
-                fontSize: 13,
+                fontSize: 12,
                 fontFamily: 'Muli',
                 color: Colors.grey,
               ),
@@ -62,13 +63,13 @@ class _ConnectionCardState extends State<ConnectionCard> {
               children: <Widget>[
                 Icon(
                   Icons.location_on,
-                  size: 17,
+                  size: 14,
                   color: Colors.grey,
                 ),
                 Text(
                   widget.userCity,
                   style: TextStyle(
-                    fontSize: 13,
+                    fontSize: 12,
                     fontFamily: 'Muli',
                     color: Colors.grey,
                   ),
@@ -78,7 +79,7 @@ class _ConnectionCardState extends State<ConnectionCard> {
             CircularButtonWithText(
               text: widget.buttonText,
               textStyle: TextStyle(
-                fontSize: 15,
+                fontSize: 12,
                 fontFamily: 'Muli',
                 fontWeight: FontWeight.w700,
                 color: widget.buttonTextColor,
