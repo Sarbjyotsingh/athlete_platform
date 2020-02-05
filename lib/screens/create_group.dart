@@ -95,6 +95,7 @@ class _CreateGroupState extends State<CreateGroup> {
                     ),
                     RectangularTextFormField(
                       hintText: 'Discription',
+                      label: '',
                     ),
                   ],
                 ),

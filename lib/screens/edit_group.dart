@@ -95,6 +95,7 @@ class _EditGroupState extends State<EditGroup> {
                     ),
                     RectangularTextFormField(
                       hintText: 'Discription',
+                      label: '',
                     ),
                   ],
                 ),

@@ -160,14 +160,19 @@ class _SearchPageState extends State<SearchPage> {
             labelStyle: TextStyle(
               fontFamily: 'Muli',
               fontSize: 16,
+              fontWeight: FontWeight.w700,
+            ),
+            unselectedLabelStyle: TextStyle(
+              fontFamily: 'Muli',
+              fontSize: 16,
             ),
             indicatorColor: Color(0xFFf01b01),
             tabs: [
               Tab(
-                text: 'For Athletes',
+                text: 'My Connections',
               ),
               Tab(
-                text: 'For Others',
+                text: 'Pending',
               ),
             ],
           ),

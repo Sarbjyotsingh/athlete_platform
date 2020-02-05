@@ -218,20 +218,6 @@ class _ConnectionListingState extends State<ConnectionListing> {
               children: <Widget>[
                 Column(
                   children: <Widget>[
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: FlatButton(
-                        child: Text(
-                          'All(700)',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontFamily: 'Muli',
-                            fontSize: 14,
-                          ),
-                        ),
-                        onPressed: () {},
-                      ),
-                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[

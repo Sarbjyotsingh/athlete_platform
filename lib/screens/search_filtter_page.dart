@@ -1,3 +1,6 @@
+import 'package:athlete_platform/screens/two_radio_button.dart';
+import 'package:athlete_platform/widgets/rectangular_drop_down_button.dart';
+import 'package:athlete_platform/widgets/rectangular_text_form_field.dart';
 import 'package:flutter/material.dart';
 
 class SearchFilterPage extends StatefulWidget {
@@ -7,6 +10,12 @@ class SearchFilterPage extends StatefulWidget {
 }
 
 class _SearchFilterPageState extends State<SearchFilterPage> {
+  String _genderGroupValue = '';
+  String _clubSignedGroupValue = '';
+  String _instituteGroupValue = '';
+  String _graduationYear = 'Graduation Year';
+  String _clubLevel = 'Club Level';
+  String _position = 'Position';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,185 +63,205 @@ class _SearchFilterPageState extends State<SearchFilterPage> {
             padding: EdgeInsets.all(13),
             child: Column(
               children: <Widget>[
-                Container(
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      "Gender",
-                      style: TextStyle(
-                        color: Colors.grey.shade700,
-                        fontSize: 16.0,
-                        fontFamily: 'Muli',
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                ),
-                Row(
-                  children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Radio(
-                          groupValue: 'Gender',
-                          value: 'Male',
-                          activeColor: Colors.red,
-                          focusColor: Colors.red,
-                          onChanged: (value) {},
-                        ),
-                        Text(
-                          'Male',
-                          style: TextStyle(
-                            color: Colors.grey.shade700,
-                            fontSize: 16.0,
-                            fontFamily: 'Muli',
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Radio(
-                          groupValue: 'Gender',
-                          value: 'Female',
-                          activeColor: Colors.red,
-                          focusColor: Colors.red,
-                          onChanged: (value) {},
-                        ),
-                        Text(
-                          'Female',
-                          style: TextStyle(
-                            color: Colors.grey.shade700,
-                            fontSize: 16.0,
-                            fontFamily: 'Muli',
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                TwoRadioButton(
+                  label: 'Gender',
+                  activeColor: Colors.red,
+                  labelValue1: 'Male',
+                  groupLabel: _genderGroupValue,
+                  onChanged1: (value) {
+                    setState(() {
+                      _genderGroupValue = value;
+                    });
+                  },
+                  labelValue2: 'Female',
+                  onChanged2: (value) {
+                    setState(() {
+                      _genderGroupValue = value;
+                    });
+                  },
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                Container(
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      "Club Signed",
-                      style: TextStyle(
-                        color: Colors.grey.shade700,
-                        fontSize: 16.0,
-                        fontFamily: 'Muli',
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                ),
-                Row(
-                  children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Radio(
-                          groupValue: 'club signed',
-                          value: 'yes',
-                          activeColor: Colors.red,
-                          focusColor: Colors.red,
-                          onChanged: (value) {},
-                        ),
-                        Text(
-                          'Yes',
-                          style: TextStyle(
-                            color: Colors.grey.shade700,
-                            fontSize: 16.0,
-                            fontFamily: 'Muli',
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Radio(
-                          groupValue: 'club signed',
-                          value: 'No',
-                          activeColor: Colors.red,
-                          focusColor: Colors.red,
-                          onChanged: (value) {},
-                        ),
-                        Text(
-                          'No',
-                          style: TextStyle(
-                            color: Colors.grey.shade700,
-                            fontSize: 16.0,
-                            fontFamily: 'Muli',
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                TwoRadioButton(
+                  label: 'Club Signed',
+                  activeColor: Colors.red,
+                  labelValue1: 'Yes',
+                  groupLabel: _clubSignedGroupValue,
+                  onChanged1: (value) {
+                    setState(() {
+                      _clubSignedGroupValue = value;
+                    });
+                  },
+                  labelValue2: 'No',
+                  onChanged2: (value) {
+                    setState(() {
+                      _clubSignedGroupValue = value;
+                    });
+                  },
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                Container(
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      "Institute Commited",
-                      style: TextStyle(
-                        color: Colors.grey.shade700,
-                        fontSize: 16.0,
-                        fontFamily: 'Muli',
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
+                TwoRadioButton(
+                  label: 'Institute Commited',
+                  activeColor: Colors.red,
+                  labelValue1: 'Yes',
+                  groupLabel: _instituteGroupValue,
+                  onChanged1: (value) {
+                    setState(() {
+                      _instituteGroupValue = value;
+                    });
+                  },
+                  labelValue2: 'No',
+                  onChanged2: (value) {
+                    setState(() {
+                      _instituteGroupValue = value;
+                    });
+                  },
                 ),
-                Row(
-                  children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Radio(
-                          groupValue: 'Institue commited',
-                          value: 'yes',
-                          activeColor: Colors.red,
-                          focusColor: Colors.red,
-                          onChanged: (value) {},
-                        ),
-                        Text(
-                          'Yes',
-                          style: TextStyle(
-                            color: Colors.grey.shade700,
-                            fontSize: 16.0,
-                            fontFamily: 'Muli',
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ],
+                RectangularDropDownButton(
+                  hintText: _clubLevel,
+                  dropDownMenuItem: [
+                    DropdownMenuItem(
+                      child: Text('U13'),
+                      value: 'U13',
                     ),
-                    Row(
-                      children: <Widget>[
-                        Radio(
-                          groupValue: 'Institue commited',
-                          value: 'No',
-                          activeColor: Colors.red,
-                          focusColor: Colors.red,
-                          onChanged: (value) {},
-                        ),
-                        Text(
-                          'No',
-                          style: TextStyle(
-                            color: Colors.grey.shade700,
-                            fontSize: 16.0,
-                            fontFamily: 'Muli',
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ],
+                    DropdownMenuItem(
+                      child: Text('U14'),
+                      value: 'U14',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('U15'),
+                      value: 'U15',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('U16'),
+                      value: 'U16',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('U17'),
+                      value: 'U17',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('U18'),
+                      value: 'U18',
                     ),
                   ],
+                  onChanged: (value) {
+                    setState(() {
+                      _clubLevel = value.toString();
+                    });
+                  },
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                RectangularDropDownButton(
+                  hintText: _graduationYear,
+                  dropDownMenuItem: [
+                    DropdownMenuItem(
+                      child: Text('2025'),
+                      value: '2025',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('2024'),
+                      value: '2024',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('2023'),
+                      value: '2023',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('2022'),
+                      value: '2022',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('2021'),
+                      value: '2021',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('2020'),
+                      value: '2020',
+                    ),
+                  ],
+                  onChanged: (value) {
+                    setState(() {
+                      _graduationYear = value.toString();
+                    });
+                  },
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                RectangularDropDownButton(
+                  hintText: _position,
+                  dropDownMenuItem: [
+                    DropdownMenuItem(
+                      child: Text('Leftside Hitter'),
+                      value: 'Leftside Hitter',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('Opposite Hitter'),
+                      value: 'Opposite Hitter',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('Setter'),
+                      value: 'Setter',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('Libero'),
+                      value: 'Libero',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('Middle Blocker'),
+                      value: 'Middle Blocker',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('Defensive Specialist'),
+                      value: 'Defensive Specialist',
+                    ),
+                  ],
+                  onChanged: (value) {
+                    setState(() {
+                      _position = value.toString();
+                    });
+                  },
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                RectangularTextFormField(
+                  label: 'Club Name',
+                  hintText: 'Ex. Club Name',
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                RectangularTextFormField(
+                  label: 'Institution\'s Name',
+                  hintText: 'Ex. Institution\'s Name',
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                RectangularTextFormField(
+                  label: 'Club Jesery',
+                  hintText: 'Ex. Club Jesery',
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                RectangularTextFormField(
+                  label: 'School Jesery',
+                  hintText: 'Ex. School Jesery',
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                RectangularTextFormField(
+                  label: 'Province',
+                  hintText: 'Ex. Province',
                 ),
               ],
             ),
